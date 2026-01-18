@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { auth } from "@/lib/auth/auth";
 import { getOrderByNumber } from "@/lib/actions/orders";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { generateWhatsAppOrderUrl } from "@/lib/utils/whatsapp";
 import { Container, Card, Button, Badge } from "@/components/ui";
 import { OptimizedImage } from "@/components/ui/optimized-image";

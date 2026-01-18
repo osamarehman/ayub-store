@@ -3,6 +3,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth/auth";
 import { getAllProducts } from "@/lib/data/admin-products";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { Button, Card } from "@/components/ui";
 import { ProductCard } from "@/components/admin/product-card";
 import { Plus, Package } from "lucide-react";

@@ -2,6 +2,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getOrderByNumberAdmin } from "@/lib/data/admin-orders";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { Card, Badge } from "@/components/ui";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { OrderStatusUpdate } from "@/components/admin/order-status-update";

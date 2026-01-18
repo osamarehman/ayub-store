@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllOrders } from "@/lib/data/admin-orders";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { Card, Badge } from "@/components/ui";
 import { OrderFilters } from "@/components/admin/order-filters";
 import { format } from "date-fns";

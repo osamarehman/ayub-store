@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDashboardStats } from "@/lib/data/admin-stats";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { Card, Badge, Button } from "@/components/ui";
 import { StatsCard } from "@/components/admin/stats-card";
 import {

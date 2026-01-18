@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data/products";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { Container } from "@/components/ui";
 import { ProductImages } from "@/components/products/product-images";
 import { ProductInfo } from "@/components/products/product-info";

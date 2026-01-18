@@ -3,6 +3,9 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { auth } from "@/lib/auth/auth";
 import { getUserOrderByNumber } from "@/lib/data/user-orders";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { Card, Badge } from "@/components/ui";
 import {
   Package,

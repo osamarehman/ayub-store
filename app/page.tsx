@@ -4,6 +4,9 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { getFeaturedProducts, getCategories } from "@/lib/data/products";
 
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   // Fetch featured products and categories from database
   const [featuredProducts, categories] = await Promise.all([

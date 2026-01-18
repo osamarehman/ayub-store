@@ -3,6 +3,9 @@ import Link from "next/link";
 import { auth } from "@/lib/auth/auth";
 import { redirect } from "next/navigation";
 import { getUserOrders, getUserStats } from "@/lib/data/user-orders";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { Card, Badge } from "@/components/ui";
 import { ShoppingBag, Package, Clock, TrendingUp } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";

@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth/auth";
 import { getAllCategories } from "@/lib/data/admin-products";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { ProductForm } from "@/components/admin/product-form";
 
 export const metadata: Metadata = {

@@ -1,6 +1,9 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { searchProducts } from "@/lib/data/products";
+
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
 import { Container, Card } from "@/components/ui";
 import { ProductCard } from "@/components/products/product-card";
 import { ProductGridSkeleton } from "@/components/products/product-grid-skeleton";
