@@ -1,0 +1,459 @@
+@import "tailwindcss";
+
+/* ==============================================
+   BIN AYUB - GENERAL STORE THEME SYSTEM
+   ============================================== */
+
+/* --- DEFAULT THEME: Elegant Blue --- */
+:root {
+  /* Brand Colors */
+  --brand-primary: 217 91% 60%;        /* #2563EB - Cerulean Blue */
+  --brand-primary-dark: 221 83% 53%;   /* #1d4ed8 - Hover states */
+  --brand-primary-light: 213 97% 87%;  /* #60a5fa - Light backgrounds */
+  --brand-secondary: 0 0% 13%;         /* #202020 - Dark Gray */
+
+  /* Neutrals */
+  --background: 0 0% 100%;             /* White */
+  --foreground: 222 47% 11%;           /* Dark navy text */
+  --muted: 210 40% 96%;                /* Light gray bg */
+  --muted-foreground: 215 16% 47%;     /* Gray text */
+
+  /* UI Elements */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 220 90% 56%;
+
+  /* States */
+  --success: 142 76% 36%;              /* Green */
+  --warning: 38 92% 50%;               /* Orange */
+  --error: 0 84% 60%;                  /* Red */
+  --info: 199 89% 48%;                 /* Cyan */
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+/* --- THEME 2: Royal Gold --- */
+[data-theme="royal-gold"] {
+  --brand-primary: 45 93% 47%;         /* Gold */
+  --brand-primary-dark: 45 93% 37%;
+  --brand-primary-light: 45 93% 60%;
+  --brand-secondary: 280 50% 25%;      /* Deep purple */
+
+  --background: 30 20% 98%;
+  --foreground: 30 10% 10%;
+  --muted: 40 20% 95%;
+  --muted-foreground: 30 8% 45%;
+
+  --ring: 45 93% 47%;
+}
+
+/* --- THEME 3: Rose Luxury --- */
+[data-theme="rose-luxury"] {
+  --brand-primary: 340 75% 55%;        /* Rose pink */
+  --brand-primary-dark: 340 75% 45%;
+  --brand-primary-light: 340 75% 70%;
+  --brand-secondary: 280 40% 40%;      /* Purple */
+
+  --background: 340 25% 98%;
+  --foreground: 340 30% 10%;
+  --muted: 340 20% 96%;
+  --muted-foreground: 340 10% 45%;
+
+  --ring: 340 75% 55%;
+}
+
+/* --- THEME 4: Emerald Prestige --- */
+[data-theme="emerald-prestige"] {
+  --brand-primary: 160 84% 39%;        /* Emerald green */
+  --brand-primary-dark: 160 84% 29%;
+  --brand-primary-light: 160 84% 50%;
+  --brand-secondary: 200 50% 40%;      /* Teal */
+
+  --background: 0 0% 100%;
+  --foreground: 160 20% 10%;
+  --muted: 160 10% 96%;
+  --muted-foreground: 160 5% 45%;
+
+  --ring: 160 84% 39%;
+}
+
+/* --- THEME 5: Midnight Black --- */
+[data-theme="midnight-black"] {
+  --brand-primary: 217 91% 60%;        /* #2563EB - Brand Blue accent */
+  --brand-primary-dark: 221 83% 53%;   /* #1d4ed8 */
+  --brand-primary-light: 213 97% 87%;  /* #60a5fa */
+  --brand-secondary: 45 93% 47%;       /* Gold accent */
+
+  --background: 222 47% 11%;           /* Dark background */
+  --foreground: 210 40% 98%;           /* Light text */
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+
+  --card: 217 33% 17%;
+  --card-foreground: 210 40% 98%;
+  --border: 217 33% 22%;
+  --input: 217 33% 22%;
+  --ring: 220 90% 56%;
+}
+
+/* ==============================================
+   TAILWIND THEME INTEGRATION
+   ============================================== */
+
+@theme inline {
+  /* Colors */
+  --color-primary: hsl(var(--brand-primary));
+  --color-primary-dark: hsl(var(--brand-primary-dark));
+  --color-primary-light: hsl(var(--brand-primary-light));
+  --color-secondary: hsl(var(--brand-secondary));
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-success: hsl(var(--success));
+  --color-warning: hsl(var(--warning));
+  --color-error: hsl(var(--error));
+  --color-info: hsl(var(--info));
+
+  /* Typography */
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, monospace;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Max Width */
+  --max-width-prose: 65ch;
+  --max-width-sm: 24rem;
+  --max-width-md: 28rem;
+  --max-width-lg: 32rem;
+  --max-width-xl: 36rem;
+  --max-width-2xl: 42rem;
+  --max-width-3xl: 48rem;
+  --max-width-4xl: 56rem;
+  --max-width-5xl: 64rem;
+  --max-width-6xl: 72rem;
+  --max-width-7xl: 80rem;
+}
+
+/* ==============================================
+   BASE STYLES
+   ============================================== */
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==============================================
+   UTILITY CLASSES
+   ============================================== */
+
+/* Text Gradients for Luxury Feel */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--brand-primary)),
+    hsl(var(--brand-secondary))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glass Morphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Shimmer Effect for Loading */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 0%,
+    hsl(var(--background)) 50%,
+    hsl(var(--muted)) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus Visible Styles */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Selection Styles */
+::selection {
+  background: hsl(var(--brand-primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* ==============================================
+   ANIMATIONS
+   ============================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.4s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* ==============================================
+   PROSE / TYPOGRAPHY STYLES
+   ============================================== */
+
+.prose {
+  line-height: 1.75;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.875rem;
+  line-height: 1.2;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.33;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.prose p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose p:first-child {
+  margin-top: 0;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose a {
+  color: hsl(var(--brand-primary));
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.prose a:hover {
+  color: hsl(var(--brand-primary-dark));
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose li > p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+  border-left: 4px solid hsl(var(--border));
+  padding-left: 1rem;
+  font-style: italic;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.prose code {
+  background: hsl(var(--muted));
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: var(--font-mono);
+}
+
+.prose pre {
+  background: hsl(var(--muted));
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.prose-sm {
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.prose-sm h1 {
+  font-size: 1.75rem;
+}
+
+.prose-sm h2 {
+  font-size: 1.25rem;
+}
+
+.prose-sm h3 {
+  font-size: 1.125rem;
+}
