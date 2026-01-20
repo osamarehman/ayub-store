@@ -3,6 +3,7 @@ import { Button, Container, Card, Badge } from "@/components/ui";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { getFeaturedProducts, getCategories } from "@/lib/data/products";
+import { siteConfig } from "@/lib/config/site";
 
 // Force dynamic rendering to avoid build-time database queries
 export const dynamic = "force-dynamic";
@@ -228,7 +229,7 @@ export default async function HomePage() {
                 asChild
               >
                 <a
-                  href="https://wa.me/923472949596"
+                  href={siteConfig.social.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
